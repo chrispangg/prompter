@@ -30,6 +30,5 @@ jobs:
           # 'latest', 'nightly', or a semver
           version: '~> v1'
           args: release --clean
-          workdir: ./cmd
         env:
           GITHUB_TOKEN: ${{ secrets.GO_RELEASER_GITHUB_TOKEN }}
