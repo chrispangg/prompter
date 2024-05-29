@@ -29,4 +29,4 @@ jobs:
           version: '~> v1'
           args: release --clean
         env:
-          GO_RELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GO_RELEASER_GITHUB_TOKEN }}
