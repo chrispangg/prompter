@@ -1,4 +1,4 @@
-module prompter
+module github.com/chrispangg/prompter
 
 go 1.22.3
 
