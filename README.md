@@ -11,7 +11,7 @@ Prompter is a command-line tool designed to interact with the OpenAI API using p
 ## Installation
 
 ```sh
-To install Prompter, please visit the [releases section](https://github.com/chrispangg/prompter/releases) on GitHub and download the binary corresponding to your operating system.
+go install github.com/chrispangg/prompter
 ```
 
 ## Usage
