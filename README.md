@@ -11,15 +11,27 @@ Prompter is a command-line tool designed to interact with the OpenAI API using p
 ## Installation
 
 ```sh
-go install github.com/chrispangg/prompter
+go install github.com/chrispangg/prompter@latest
 ```
 
 ## Usage
 
-### Basic Command
+Ask a question to the OpenAI API. Reads input from stdin if no query is provided.
 
 ```sh
-prompter ask "Your query here"
+prompter ask "Explain the theory of relativity"
+```
+
+Use pbpaste to pipe clipboard content:
+
+```sh
+pbpaste | prompter ask
+```
+
+Override the model and temperature with flags:
+
+```sh
+pbpaste | prompter ask --api-key your_api_key_here --model "gpt-3.5-turbo" --temperature 0.9 --template templates/example.tmpl
 ```
 
 ### Options
@@ -33,7 +45,7 @@ prompter ask "Your query here"
 ### Example with Template
 
 ```sh
-prompter ask "Explain the theory of relativity" --template=templates/extract_wisdom.tmpl
+prompter ask "Explain the theory of relativity" --template=templates/write_essay.tmpl
 ```
 
 ## Templates
@@ -54,4 +66,3 @@ This project uses the following libraries:
 
 -   [go-openai](https://github.com/sashabaranov/go-openai)
 -   [cobra](https://github.com/spf13/cobra)
-

@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"prompter/internal/openai"
+	"github.com/chrispangg/prompter/internal/openai"
 )
 
 func readFromStdin() (string, error) {

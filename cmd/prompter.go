@@ -1,8 +1,9 @@
-package main
+package cmd
 
 import (
 	"os"
-	"prompter/internal/app"
+
+	"github.com/chrispangg/prompter/internal/app"
 
 	"github.com/spf13/cobra"
 )
@@ -25,6 +26,7 @@ var (
 func init() {
 	rootCmd.AddCommand(askCmd)
 	rootCmd.AddCommand(cmd2)
+
 	rootCmd.PersistentFlags().StringVar(&apiKey, "api-key", "", "OpenAI API key")
 
 	askCmd.Flags().StringVarP(&modelName, "model", "m", "gpt-3.5-turbo", "Model name to use (default: gpt-3.5-turbo)")
@@ -49,7 +51,7 @@ var cmd2 = &cobra.Command{
 	},
 }
 
-func main() {
+func Execute() {
 	// Fetch the API key from environment variable if not set via flag
 	if apiKey = os.Getenv("OPENAI_API_KEY"); apiKey == "" {
 		println("API key not set. Provide it via --api-key flag or OPENAI_API_KEY environment variable.")
