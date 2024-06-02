@@ -10,15 +10,15 @@ import (
 	openai "github.com/sashabaranov/go-openai"
 )
 
-func MakeAPICall(query, apiKey, model string, temperature float32, templatePath string) string {
+func MakeAPICall(query, apiKey, model string, temperature float32, templateName string) string {
 	client := NewClient(apiKey)
 
 	var filledQuery string
 	var err error
 
-	if templatePath != "" {
-		// Load the template from file if specified
-		templateStr, err := LoadTemplate(templatePath)
+	if templateName != "" {
+		// Load the template by name
+		templateStr, err := LoadTemplate(templateName)
 		if err != nil {
 			log.Println("Error loading template:", err)
 			return "Error: Could not load template"
@@ -45,15 +45,15 @@ func MakeAPICall(query, apiKey, model string, temperature float32, templatePath 
 	return response
 }
 
-func MakeAPICallStream(query, apiKey, model string, temperature float32, templatePath string) {
+func MakeAPICallStream(query, apiKey, model string, temperature float32, templateName string) {
 	client := NewClient(apiKey)
 
 	var filledQuery string
 	var err error
 
-	if templatePath != "" {
+	if templateName != "" {
 		// Load the template from file if specified
-		templateStr, err := LoadTemplate(templatePath)
+		templateStr, err := LoadTemplate(templateName)
 		if err != nil {
 			log.Println("Error loading template:", err)
 			fmt.Println("Error: Could not load template")

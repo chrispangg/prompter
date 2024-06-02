@@ -31,7 +31,7 @@ func init() {
 
 	askCmd.Flags().StringVarP(&modelName, "model", "m", "gpt-3.5-turbo", "Model name to use (default: gpt-3.5-turbo)")
 	askCmd.Flags().Float32VarP(&temperature, "temperature", "t", 0.1, "Sampling temperature to use (default: 0.1)")
-	askCmd.Flags().StringVar(&template, "template", "", "Path to the template file to use")
+	askCmd.Flags().StringVar(&template, "template", "", "Name of the template to use (e.g., 'write_essay')")
 	askCmd.Flags().BoolVar(&streaming, "streaming", true, "Enable or disable streaming (default: true)")
 }
 
